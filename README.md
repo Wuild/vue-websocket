@@ -105,5 +105,5 @@ export default {
 </script>
 ```
 
-####License
+#### License
 Copyright © 2018, Simon Dahlberg. Released under the MIT License.
