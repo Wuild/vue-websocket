@@ -1,8 +1,19 @@
 {
-  "name": "@labcake/vue-websocket",
+  "name": "@wuild/vue-websocket",
   "version": "1.0.0",
   "description": "A simple WebSocket client plugin for Vue2",
   "main": "WebSocket.js",
   "author": "Wuild",
-  "license": "ISC"
+  "license": "MIT",
+  "homepage": "https://github.com/wuild/vue-websocket#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wuild/vue-websocket.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Wuild/vue-websocket/issues"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
 }
