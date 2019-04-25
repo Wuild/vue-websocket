@@ -1,0 +1,8 @@
+{
+  "name": "@labcake/vue-websocket",
+  "version": "1.0.0",
+  "description": "A simple WebSocket client plugin for Vue2",
+  "main": "WebSocket.js",
+  "author": "Wuild",
+  "license": "ISC"
+}
