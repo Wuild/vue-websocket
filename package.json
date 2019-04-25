@@ -1,7 +1,13 @@
 {
   "name": "@wuild/vue-websocket",
   "version": "1.0.1",
-  "description": "A simple WebSocket client plugin for Vue2",
+  "description": "A simple WebSocket client plugin for Vue2 with automatic reconnect",
+  "keywords": [
+    "browser",
+    "vue",
+    "websocket",
+    "plugin"
+  ],
   "main": "WebSocket.js",
   "author": "Wuild",
   "license": "MIT",
