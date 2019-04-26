@@ -82,45 +82,6 @@ export default {
 }
 ```
 
-
-#### Full example
-```vue
-<template>
-    <div>
-        <button @click="connect()" v-if="!$websocket.connected && !$websocket.connecting && !$websocket.reconnecting">Connect</button>
-        <button @click="disconnect()" v-else-if="$websocket.connected">Disconnect</button>
-    </div>
-</template>
-<script>
-    export default {
-        methods: {
-            connect(){
-                this.$websocket.connect("wss://echo.websocket.org")
-            },
-            disconnect(){
-                this.$websocket.disconnect()
-            }
-        },
-        created() {
-            this.$websocket.$on("open", function () {
-                console.log("Websocket open", this.$websocket.options.url);
-                
-                this.$websocket.send("Hello World");
-                
-            }.bind(this));
-
-            this.$websocket.$on("close", function (event) {
-                console.warn("Websocket closed", this.$websocket.options.url);
-            }.bind(this));
-
-            this.$websocket.$on("message", function (message) {
-                console.log("Message received", message)
-            });
-        }
-    }
-</script>
-```
-
 #### Component based events
 ```vue
 <script>
