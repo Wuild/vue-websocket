@@ -167,5 +167,25 @@ export default {
                 }
             }
         });
+
+        /**
+         * Setup WebSocket events using the "events" object in the component
+         */
+        Vue.mixin({
+            beforeCreate: function () {
+                if (this.$options.events)
+                    Object.keys(this.$options.events).forEach((key) => {
+                        let func = this.$options.events[key].bind(this);
+                        this.$websocket.$on(key, func);
+                        this.$options.events[key]._binded = func;
+                    });
+            },
+            beforeDestroy() {
+                if (this.$options.events)
+                    Object.keys(this.$options.events).forEach((key) => {
+                        this.$websocket.$off(key, this.$options.events[key]._binded);
+                    });
+            }
+        });
     }
 }

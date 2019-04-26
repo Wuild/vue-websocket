@@ -105,5 +105,25 @@ export default {
 </script>
 ```
 
+#### Component based events
+```vue
+<script>
+// These events will be automatically removed when component is destroyed
+export default {
+    events: {
+        open(){
+            // WebSocket connection open
+        },
+        close(){
+            // WebSocket connection closed
+        },
+        message(){
+            // WebSocket message received
+        }
+    }
+}
+</script>
+```
+
 #### License
-Copyright © 2018, Simon Dahlberg. Released under the MIT License.
+Copyright © 2018, [Wuild](https://github.com/Wuild) Released under the [MIT license](https://opensource.org/licenses/MIT).
