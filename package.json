@@ -1,6 +1,6 @@
 {
   "name": "@wuild/vue-websocket",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A simple WebSocket client plugin for Vue2 with automatic reconnect",
   "keywords": [
     "browser",
