@@ -1,7 +1,10 @@
 # WebSocket
 This is a small and simple WebSocket client for Vue2
 
-## Install
+## TODO
+* Write a better README
+
+## Installation
 Install with npm:
 ```
 npm install --save @wuild/vue-websocket
@@ -32,7 +35,6 @@ export default {
 | close                      | On connection close          |
 | message                    | On message                   |
 | error                      | On error                     |
-
 
 #### Event Example
 ```javascript
