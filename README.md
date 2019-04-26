@@ -44,7 +44,23 @@ export default {
         this.$websocket.$on("close", function(){
             // Connection is closed
         });
+        this.$websocket.$on("message", function(){
+            // WebSocket message received
+        });
         this.$websocket.connect("wss://echo.websocket.org");
+    },
+    events: {
+        websocket: {
+            open(){
+                // WebSocket connection open
+            },
+            close(){
+                // WebSocket connection closed
+            },
+            message(){
+                // WebSocket message received
+            }
+        }
     }
 }
 ```
@@ -111,14 +127,16 @@ export default {
 // These events will be automatically removed when component is destroyed
 export default {
     events: {
-        open(){
-            // WebSocket connection open
-        },
-        close(){
-            // WebSocket connection closed
-        },
-        message(){
-            // WebSocket message received
+        websocket: {
+            open(){
+                // WebSocket connection open
+            },
+            close(){
+                // WebSocket connection closed
+            },
+            message(){
+                // WebSocket message received
+            }
         }
     }
 }

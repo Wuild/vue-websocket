@@ -1,3 +1,5 @@
+const {isObject} = require("lodash");
+
 export default {
     install(Vue) {
         Vue.prototype.$websocket = new Vue({
@@ -173,17 +175,17 @@ export default {
          */
         Vue.mixin({
             beforeCreate: function () {
-                if (this.$options.events)
-                    Object.keys(this.$options.events).forEach((key) => {
-                        let func = this.$options.events[key].bind(this);
+                if (isObject(this.$options.events) && this.$options.events.websocket)
+                    Object.keys(this.$options.events.websocket).forEach((key) => {
+                        let func = this.$options.events.websocket[key].bind(this);
                         this.$websocket.$on(key, func);
-                        this.$options.events[key]._binded = func;
+                        this.$options.events.websocket[key]._binded = func;
                     });
             },
             beforeDestroy() {
-                if (this.$options.events)
-                    Object.keys(this.$options.events).forEach((key) => {
-                        this.$websocket.$off(key, this.$options.events[key]._binded);
+                if (isObject(this.$options.events) && this.$options.events.websocket)
+                    Object.keys(this.$options.events.websocket).forEach((key) => {
+                        this.$websocket.$off(key, this.$options.events.websocket[key]._binded);
                     });
             }
         });
