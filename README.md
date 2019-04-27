@@ -1,6 +1,8 @@
 # WebSocket
 This is a small and simple WebSocket client for Vue2
 
+[![npm version](https://badge.fury.io/js/%40wuild%2Fvue-websocket.svg)](https://badge.fury.io/js/%40wuild%2Fvue-websocket)
+
 ## TODO
 * Write a better README
 
